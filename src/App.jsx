@@ -1,15 +1,6 @@
 import Header from './components/Header'
+import Faq from './components/Faq'
 import { faqs } from './data'
-
-function Faq(props) {
-  return (
-    <li>
-      <p>
-        <strong>{props.question}</strong> {props.answer}
-      </p>
-    </li>
-  )
-}
 
 export default function App() {
   return (
@@ -41,6 +32,9 @@ export default function App() {
               answer={faqs[4].answer}
             />
           </ul>
+        </section>
+        <section>
+          <h3>Our advantages:</h3>
         </section>
       </main>
     </div>
