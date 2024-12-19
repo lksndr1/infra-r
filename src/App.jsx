@@ -5,10 +5,10 @@ import { useState } from 'react'
 import { faqs, values } from './data'
 
 export default function App() {
-  const [content, setContent] = useState('Press button')
+  const [contentType, setContentType] = useState(null)
 
   function handleClick(type) {
-    setContent(type)
+    setContentType(type)
   }
 
   return (
@@ -47,7 +47,10 @@ export default function App() {
           <Button buttonClicked={() => handleClick('innovation')}>Third</Button>
           <Button buttonClicked={() => handleClick('quality')}>Fourth</Button>
 
-          <p>{values[content]}</p>
+          {!contentType && <p>Push the button</p>}
+
+          {contentType && <p>{values[contentType]}</p>}
+
         </section>
       </main>
     </div>
