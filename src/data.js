@@ -21,9 +21,9 @@ export const faqs = [
   },
 ]
 
-export const differences = {
-  way: 'Узконаправленный подход. Учим только фронтенду, поэтому вы получаете именно те знания, за которыми пришли.',
-  easy: 'Доступность обучения. Простыми словами объясняем сложные темы на понятных примерах.',
-  program:
-    'Концентрация знаний. Например, модуль «HTML&CSS» даст вам столько же умений и навыков, как и 6 месяцев обучения по этой программе в госуниверситете.',
+export const values = {
+  opennes: 'to the world, people, new ideas and projects',
+  responsibility: 'we are aware that the results of our work have an impact on our lives and the lives of future generations',
+  innovation: 'we use the latest technology to implement non-standard solutions',
+  quality: 'we do not strive to be the first among others, but we want to be the best in our business',
 }
