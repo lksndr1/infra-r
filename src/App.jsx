@@ -18,7 +18,10 @@ export default function App() {
         <section>
           <h3>Frequently Asked Questions:</h3>
           <ul>
-            <Faq
+            {faqs.map((faq) => {
+              return < Faq key={faq.question} {...faq} />
+            })}
+            {/* <Faq
               question={faqs[0].question}
               answer={faqs[0].answer}
             />
@@ -30,22 +33,32 @@ export default function App() {
               question={faqs[2].question}
               answer={faqs[2].answer}
             />
-            <Faq
-              question={faqs[3].question}
-              answer={faqs[3].answer}
-            />
-            <Faq
-              question={faqs[4].question}
-              answer={faqs[4].answer}
-            />
+            <Faq {...faqs[3]} />
+            <Faq {...faqs[4]} /> */}
           </ul>
         </section>
         <section>
           <h3>Main values of our company:</h3>
-          <Button buttonClicked={() => handleClick('opennes')}>First</Button>
-          <Button buttonClicked={() => handleClick('responsibility')}>Second</Button>
-          <Button buttonClicked={() => handleClick('innovation')}>Third</Button>
-          <Button buttonClicked={() => handleClick('quality')}>Fourth</Button>
+          <Button
+            isActive={contentType === 'opennes'}
+            buttonClicked={() => handleClick('opennes')}>
+            First
+          </Button>
+          <Button
+            isActive={contentType === 'responsibility'}
+            buttonClicked={() => handleClick('responsibility')}>
+            Second
+          </Button>
+          <Button
+            isActive={contentType === 'innovation'}
+            buttonClicked={() => handleClick('innovation')}>
+            Third
+          </Button>
+          <Button
+            isActive={contentType === 'quality'}
+            buttonClicked={() => handleClick('quality')}>
+            Fourth
+          </Button>
 
           {!contentType && <p>Push the button</p>}
 
@@ -53,6 +66,6 @@ export default function App() {
 
         </section>
       </main>
-    </div>
+    </div >
   )
 }
