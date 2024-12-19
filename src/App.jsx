@@ -1,15 +1,22 @@
 import Header from './components/Header'
 import Faq from './components/Faq'
-import { faqs } from './data'
+import Button from './components/Button/Button'
+import { useState } from 'react'
+import { faqs, values } from './data'
 
 export default function App() {
+  const [content, setContent] = useState('Press button')
+
+  function handleClick(type) {
+    setContent(type)
+  }
+
   return (
     <div>
       <Header />
       <main>
         <section>
           <h3>Frequently Asked Questions:</h3>
-
           <ul>
             <Faq
               question={faqs[0].question}
@@ -34,7 +41,13 @@ export default function App() {
           </ul>
         </section>
         <section>
-          <h3>Our advantages:</h3>
+          <h3>Main values of our company:</h3>
+          <Button buttonClicked={() => handleClick('opennes')}>First</Button>
+          <Button buttonClicked={() => handleClick('responsibility')}>Second</Button>
+          <Button buttonClicked={() => handleClick('innovation')}>Third</Button>
+          <Button buttonClicked={() => handleClick('quality')}>Fourth</Button>
+
+          <p>{values[content]}</p>
         </section>
       </main>
     </div>
