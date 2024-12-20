@@ -50,3 +50,7 @@ p {
 header img {
   width: 100px;
 }
+
+.centered {
+  text-align: center;
+}
