@@ -1,4 +1,4 @@
-import Header from './components/Header'
+import Header from './components/Header/Header'
 import FaqsSection from './components/FaqsSection'
 import ValuesSection from './components/ValuesSection'
 import HeadingSection from './components/HeadingSection'
