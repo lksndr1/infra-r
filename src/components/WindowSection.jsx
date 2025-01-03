@@ -1,8 +1,10 @@
 import Button from './Button/Button'
 import Modal from './Modal/Modal'
 import { useState, useEffect, useCallback } from 'react'
+import useInput from '../hooks/useInput'
 
 export default function WindowSection() {
+    const input = useInput()
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [loading, setLoading] = useState(false)
     const [users, setUsers] = useState([])
@@ -37,13 +39,16 @@ export default function WindowSection() {
 
             {loading && <p>Loading...</p>}
 
-            {
-                !loading && <ul>
-                    {users.map((user) => (
-                        <li key={user.id}>{user.name}</li>
-                    ))}
-                </ul>
-            }
+            {!loading && (
+                <>
+                    <input type="text" className='control' {...input} />
+                    <ul>
+                        {users.filter(user => user.name.toLowerCase().includes(input.value.toLowerCase())).map((user) => (
+                            <li key={user.id}>{user.name}</li>
+                        ))}
+                    </ul>
+                </>
+            )}
         </section >
     )
 }
